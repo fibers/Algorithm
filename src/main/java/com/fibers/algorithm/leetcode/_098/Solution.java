@@ -1,15 +1,7 @@
 package com.fibers.algorithm.leetcode._098;
 
 
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-
-    TreeNode(int x) {
-        val = x;
-    }
-}
+import com.fibers.algorithm.datastructure.TreeNode;
 
 public class Solution {
     public boolean isValidBST(TreeNode root) {
