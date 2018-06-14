@@ -7,6 +7,24 @@ public class Solution {
         ListNode pA = headA;
         ListNode pB = headB;
 
-        while(pA)
+        while (pA != null || pB != null) {
+            if (pA == null) {
+                headB = headB.next;
+            } else {
+                pA = pA.next;
+            }
+            if (pB == null) {
+                headA = headA.next;
+            } else {
+                pB = pB.next;
+            }
+        }
+
+        while(headA != headB){
+            headA = headA.next;
+            headB = headB.next;
+        }
+
+        return headA;
     }
 }
