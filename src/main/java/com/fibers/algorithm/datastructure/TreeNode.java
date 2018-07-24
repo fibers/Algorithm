@@ -5,6 +5,9 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
 
+/**
+ * Binary Tree Operations
+ */
 public class TreeNode {
     public int val;
     public TreeNode left;
@@ -33,18 +36,6 @@ public class TreeNode {
         t.postorderTraversal();
         t.leftView();
         t.rightView();
-    }
-
-    private TreeNode createBinaryTreeByArray(Integer[] t, int index) {
-        TreeNode tn = null;
-        int len = t.length;
-        if (len > 0 && index < len && t[index] != null) {
-            tn = new TreeNode(t[index]);
-            tn.left = createBinaryTreeByArray(t, 2 * index + 1);
-            tn.right = createBinaryTreeByArray(t, 2 * index + 2);
-        }
-
-        return tn;
     }
 
     public void breadthFirstTravel() {
@@ -178,6 +169,10 @@ public class TreeNode {
         System.out.println();
     }
 
+    public void makeMaxHeap(){
+
+    }
+
     public TreeNode nearestAncestor(TreeNode root, TreeNode t1, TreeNode t2) {
         if (root == null || t1 == null || t2 == null) {
             return null;
@@ -200,5 +195,17 @@ public class TreeNode {
             return l;
         }
 
+    }
+
+    private TreeNode createBinaryTreeByArray(Integer[] t, int index) {
+        TreeNode tn = null;
+        int len = t.length;
+        if (len > 0 && index < len && t[index] != null) {
+            tn = new TreeNode(t[index]);
+            tn.left = createBinaryTreeByArray(t, 2 * index + 1);
+            tn.right = createBinaryTreeByArray(t, 2 * index + 2);
+        }
+
+        return tn;
     }
 }
