@@ -12,7 +12,7 @@ public class Solution {
         int i = 0;
         int j = colLen - 1;
 
-        while (i >= 0 && i < rowLen && j >= 0 && j < colLen) {
+        while (i < rowLen && j < colLen) {
             int val = matrix[i][j];
             if (val == target) {
                 return true;

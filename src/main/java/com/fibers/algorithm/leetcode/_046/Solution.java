@@ -22,26 +22,30 @@ public class Solution {
     }
 
     public List<List<Integer>> permute(int[] nums) {
-        return permuteRecursion(new ArrayList<Integer>(), nums, 0);
+        List<List<Integer>> list = new ArrayList<>();
+        if (nums == null || nums.length == 0) {
+            return list;
+        }
+        permuteRecursion(nums, 0, nums.length - 1, list);
+        return list;
     }
 
-    private List<List<Integer>> permuteRecursion(List<Integer> tempList, int[] nums, int start) {
-        List<List<Integer>> resultList = new ArrayList<>();
+    private void permuteRecursion(int[] nums, int start, int end, List<List<Integer>> result) {
 
-        if (tempList.size() == nums.length) {
-            resultList.add(tempList);
-            return resultList;
+        if (start == end) {
+            List<Integer> temp = new ArrayList();
+            for (int i : nums) {
+                temp.add(i);
+            }
+            result.add(temp);
+            return;
         }
 
-        for (int i = start; i <= nums.length - 1; i++) {
+        for (int i = start; i <= end; i++) {
             Utils.swap(nums, start, i);
-            tempList.add(nums[i]);
-            List<List<Integer>> recursionList = permuteRecursion(tempList, nums, start + 1);
-            resultList.addAll(recursionList);
-
+            permuteRecursion(nums, start + 1, end, result);
             Utils.swap(nums, start, i);
         }
-
-        return resultList;
+        return;
     }
 }

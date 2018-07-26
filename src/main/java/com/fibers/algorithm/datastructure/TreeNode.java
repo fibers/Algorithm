@@ -106,14 +106,12 @@ public class TreeNode {
                 t = t.left;
             }
 
-            if (!s.isEmpty()) {
-                TreeNode temp = s.pop();
-                System.out.print(temp.val);
-                System.out.print(",");
+            TreeNode temp = s.pop();
+            System.out.print(temp.val);
+            System.out.print(",");
 
-                if (temp.right != null) {
-                    t = temp.right;
-                }
+            if (temp.right != null) {
+                t = temp.right;
             }
         }
 
