@@ -53,4 +53,16 @@ public class Utils {
         System.out.println();
     }
 
+    public static void printListNode(ListNode a) {
+        
+        while (a != null) {
+            System.out.print(a.val);
+            a = a.next;
+            if (a != null) {
+                System.out.print(",");
+            }
+        }
+        System.out.println();
+    }
+
 }
