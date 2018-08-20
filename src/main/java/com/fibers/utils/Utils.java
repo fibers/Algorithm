@@ -5,6 +5,21 @@ import com.fibers.algorithm.datastructure.ListNode;
 import java.util.List;
 
 public class Utils {
+
+    public static void reverseArray(int[] nums, int start, int end) {
+        if (nums == null || nums.length <= 1 || start < 0 || end > nums.length - 1) {
+            return;
+        }
+
+        for (; start < end; start++, end--) {
+            if (nums[start] != nums[end]) {
+                int temp = nums[start];
+                nums[start] = nums[end];
+                nums[end] = temp;
+            }
+        }
+    }
+
     public static void swap(int[] a, int idx1, int idx2) {
         if (idx1 != idx2) {
             int temp = a[idx1];
@@ -54,7 +69,7 @@ public class Utils {
     }
 
     public static void printListNode(ListNode a) {
-        
+
         while (a != null) {
             System.out.print(a.val);
             a = a.next;
