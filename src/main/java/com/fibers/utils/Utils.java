@@ -44,6 +44,9 @@ public class Utils {
 
     public static void printList(List<Integer> l) {
         if (l != null) {
+
+            System.out.print("[");
+
             int len = l.size();
             for (int i = 0; i < len; i++) {
                 System.out.print(l.get(i));
@@ -51,6 +54,40 @@ public class Utils {
                     System.out.print(",");
                 }
             }
+
+            System.out.print("]");
+        }else{
+            System.out.print("null");
+        }
+        System.out.println();
+    }
+
+    public static void printNestList(List<List<Integer>> l) {
+        if (l != null) {
+            int len = l.size();
+            System.out.print("[");
+            for (int i = 0; i < len; i++) {
+
+                System.out.print("[");
+                List<Integer> list = l.get(i);
+                int len2 = list.size();
+
+                for (int j = 0; j < len2; j++) {
+                    System.out.print(list.get(j));
+                    if (j < len2 - 1) {
+                        System.out.print(",");
+                    }
+                }
+
+                System.out.print("]");
+
+                if (i < len - 1) {
+                    System.out.print(",");
+                }
+            }
+            System.out.print("]");
+        }else{
+            System.out.print("null");
         }
         System.out.println();
     }
