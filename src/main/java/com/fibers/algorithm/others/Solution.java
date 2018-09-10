@@ -14,6 +14,15 @@ public class Solution {
         s.quickSort(a, 0, a.length - 1);
         Utils.printArray(a);
 
+
+        int b = 45;
+        int c = b | (1 << (6 & 0x1F));
+        int d = b | (1 << 6);
+
+
+        System.out.println(c);
+        System.out.println(d);
+
     }
 
     public int fibonacci(int n) {

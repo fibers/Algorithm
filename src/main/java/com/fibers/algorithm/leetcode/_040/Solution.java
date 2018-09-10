@@ -5,6 +5,14 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Solution {
+
+    public static void main(String[] args) {
+        int[] candidates = new int[]{2, 5, 2, 1, 2};
+
+        Solution s = new Solution();
+        System.out.println(s.combinationSum2(candidates, 5));
+    }
+
     public List<List<Integer>> combinationSum2(int[] candidates, int target) {
         List<List<Integer>> result = new ArrayList<>();
         List<Integer> list = new ArrayList<>();
