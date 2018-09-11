@@ -2,29 +2,38 @@ package com.fibers.algorithm.leetcode._005;
 
 public class Solution {
     public String longestPalindrome(String s) {
-        int start = 0;
-        int end = 0;
-        int len = s.length();
+        if(s == null || s.length() == 0){
+            return s;
+        }
 
-        for (int i = 0; i < len; i++) {
-            int len1 = expandAroundCenter(s, i, i);
-            int len2 = expandAroundCenter(s, i, i+1);
-            int maxLen = Math.max(len1, len2);
-            if (maxLen > end - start) {
-                start = i - (maxLen - 1) / 2;
-                end = i + maxLen / 2;
+        int len = s.length();
+        boolean[][] dp = new boolean[len][len];
+        int left = 0;
+        int right = 0;
+        int max = 0;
+
+        for(int i = 0; i<len; i++){
+            dp[i][i] = true;
+            for(int j = 0; j<i ; j++){
+                // dp[j][i] = (s.charAt(i) == s.charAt(j) && ( i-j < 2 || dp[j+1][i-1]));
+
+                if(s.charAt(i) == s.charAt(j)){
+                    if(i-j < 2){
+                        dp[j][i] = true;
+                    }else{
+                        dp[j][i] = dp[j+1][i-1];
+                    }
+                }else{
+                    dp[j][i] = false;
+                }
+
+                if(dp[j][i] && i-j + 1 > max){
+                    max = i-j+1;
+                    left = j;
+                    right = i;
+                }
             }
         }
-
-        return s.substring(start, end + 1);
-    }
-
-    private int expandAroundCenter(String s, int left, int right) {
-        int len = s.length();
-        while (left >= 0 && right < len && s.charAt(left) == s.charAt(right)) {
-            left--;
-            right++;
-        }
-        return right - left - 1;
+        return s.substring(left, right + 1);
     }
 }
