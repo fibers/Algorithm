@@ -8,15 +8,23 @@ public class Solution {
         int start = 0;
         int end = nums.length - 1;
         while (start <= end) {
-            if (start == end) {
-                return target == nums[start] ? start : -1;
-            }
             int mid = (start + end) / 2;
-            if ((nums[mid] < nums[end] && (nums[mid] < target && target <= nums[end])) ||
-                    ((nums[mid] < target || target <= nums[end]) && nums[mid] > nums[end])) {
-                start = mid + 1;
+            if (nums[mid] == target) {
+                return start;
+            }
+
+            if (nums[mid] <= nums[end]) {
+                if (nums[mid] < target && target <= nums[end]) {
+                    start = mid + 1;
+                } else {
+                    end = mid - 1;
+                }
             } else {
-                end = mid;
+                if (nums[mid] < target || target <= nums[end]) {
+                    start = mid + 1;
+                } else {
+                    end = mid - 1;
+                }
             }
         }
         return -1;
