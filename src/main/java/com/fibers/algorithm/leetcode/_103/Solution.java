@@ -3,9 +3,9 @@ package com.fibers.algorithm.leetcode._103;
 import com.fibers.algorithm.datastructure.TreeNode;
 
 import java.util.ArrayList;
+import java.util.Deque;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Queue;
 
 public class Solution {
 
@@ -13,7 +13,7 @@ public class Solution {
         Integer[] array = {1, 2, 3, null, 5, 6, 7, null, null, null, null, 12, 13};
         TreeNode t = new TreeNode(array);
         Solution s = new Solution();
-        s.zigzagLevelOrder(t);
+        System.out.println(s.zigzagLevelOrder(t));
 
     }
 
@@ -23,29 +23,29 @@ public class Solution {
             return list;
         }
 
-        Queue<TreeNode> q = new LinkedList<>();
+        Deque<TreeNode> q = new LinkedList<>();
         q.add(root);
         boolean oddLevel = true;
         while (!q.isEmpty()) {
-            List<Integer> listTemp =  new ArrayList<>();
+            List<Integer> listTemp = new ArrayList<>();
             int size = q.size();
-            for(int i=0; i<size; i++){
+            for (int i = 0; i < size; i++) {
                 TreeNode temp = null;
                 if (oddLevel) {
-                    temp = q.poll();
+                    temp = q.pollFirst();
                     if (temp.left != null) {
-                        q.add(temp.left);
+                        q.addLast(temp.left);
                     }
                     if (temp.right != null) {
-                        q.add(temp.right);
+                        q.addLast(temp.right);
                     }
                 } else {
-                    temp = ((LinkedList<TreeNode>) q).pollLast();
+                    temp = q.pollLast();
                     if (temp.right != null) {
-                        ((LinkedList<TreeNode>) q).push(temp.right);
+                        q.addFirst(temp.right);
                     }
                     if (temp.left != null) {
-                        ((LinkedList<TreeNode>) q).push(temp.left);
+                        q.addFirst(temp.left);
                     }
                 }
 

@@ -10,18 +10,23 @@ public class Solution {
             System.out.println(s.fibonacci(i));
         }
 
-        int[] a = new int[]{2, 4, 9, 4, 8, 3, 7, 9, 0, 7, 6, 5, 1};
-        s.quickSort(a, 0, a.length - 1);
-        Utils.printArray(a);
+        int[] ar = new int[]{2, 4, 9, 4, 8, 3, 7, 9, 0, 7, 6, 5, 1};
+        s.quickSort(ar, 0, ar.length - 1);
+        Utils.printArray(ar);
 
 
-        int b = 45;
-        int c = b | (1 << (6 & 0x1F));
-        int d = b | (1 << 6);
+        System.out.println("Test Start");
+        for (int i = -10000; i <= 10000; i++) {
+            int a = i & -i;
+            int b = i & (i - 1) ^ i;
 
+            if( a != b){
+                System.out.println("Oops!");
+            }else{
+                System.out.println("Good!");
+            }
+        }
 
-        System.out.println(c);
-        System.out.println(d);
 
     }
 

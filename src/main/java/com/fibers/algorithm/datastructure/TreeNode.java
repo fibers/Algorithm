@@ -73,6 +73,7 @@ public class TreeNode {
     }
 
     public void postorderTraversal() {
+
         Stack<TreeNode> s = new Stack<>();
         Stack<TreeNode> s1 = new Stack<>();
         s.push(this);
@@ -167,7 +168,7 @@ public class TreeNode {
         System.out.println();
     }
 
-    public void makeMaxHeap(){
+    public void makeMaxHeap() {
 
     }
 
