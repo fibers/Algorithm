@@ -2,10 +2,6 @@ package com.fibers.algorithm.others;
 
 import com.fibers.utils.Utils;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 public class Solution {
     public static void main(String[] args) {
         Solution s = new Solution();
@@ -76,4 +72,5 @@ public class Solution {
         }
         return start;
     }
+
 }
