@@ -42,7 +42,7 @@ public class Utils {
         }
     }
 
-    public static void printList(List<Integer> l) {
+    public static void printList(List<?> l) {
         if (l != null) {
 
             System.out.print("[");
