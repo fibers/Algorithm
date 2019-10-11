@@ -36,8 +36,8 @@ public class Solution {
     }
 
     public double findMedianSortedArrays2(int[] nums1, int[] nums2) {
-        int len1 = nums1.length;
-        int len2 = nums2.length;
+        // int len1 = nums1.length;
+        // int len2 = nums2.length;
         return 0.0;
     }
 }

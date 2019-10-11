@@ -26,7 +26,7 @@ public class Calculator {
     }
 
     public static Queue<String> shuntingYard(String s) {
-        Stack<String> operator = new Stack<>();
+    
         Queue<String> output = new LinkedList<>();
 
 

@@ -8,7 +8,7 @@ public class Solution {
             return true;
         }
 
-        Stack<Character> stack = new Stack();
+        Stack<Character> stack = new Stack<Character>();
         for (char c : s.toCharArray()) {
             if (c == '(') {
                 stack.push(')');

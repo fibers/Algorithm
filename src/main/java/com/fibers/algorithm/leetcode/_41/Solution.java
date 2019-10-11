@@ -7,7 +7,7 @@ public class Solution {
         }
 
         int minPositive = Integer.MAX_VALUE;
-        int maxContinuousPositive = Integer.MAX_VALUE;
+        // int maxContinuousPositive = Integer.MAX_VALUE;
 
         for (int i : nums) {
             if (i < minPositive && i > 0) {

@@ -5,24 +5,24 @@ import java.util.Map;
 
 public class Solution {
 
+    private static final Map<Character, Integer> map = new HashMap<Character, Integer>() {
+        {
+            put('M', 1000);
+            put('D', 500);
+            put('C', 100);
+            put('L', 50);
+            put('X', 10);
+            put('V', 5);
+            put('I', 1);
+        }
+    };
+
     public static void main(String[] args) {
         Solution s = new Solution();
         System.out.println(s.romanToInt("MCMXCIV"));
     }
 
     public int romanToInt(String s) {
-
-        Map<Character, Integer> map = new HashMap<Character, Integer>() {
-            {
-                put('M', 1000);
-                put('D', 500);
-                put('C', 100);
-                put('L', 50);
-                put('X', 10);
-                put('V', 5);
-                put('I', 1);
-            }
-        };
 
         if (s == null || s.length() == 0) {
             return 0;

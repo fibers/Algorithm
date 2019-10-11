@@ -19,7 +19,7 @@ public class Solution {
     }
 
     private void backtracking(List<List<Integer>> results, List<Integer> list, int[] nums, int start) {
-        results.add(new ArrayList(list));
+        results.add(new ArrayList<Integer>(list));
 
         for (int i = start; i < nums.length; i++) {
             if (i > start && nums[i] == nums[i - 1]) {

@@ -1,6 +1,5 @@
 package com.fibers.algorithm.leetcode._224;
 
-import java.util.Stack;
 
 public class Solution {
     public int calculate(String s) {
@@ -8,7 +7,7 @@ public class Solution {
             return 0;
         }
 
-        Stack<Character> stack = new Stack<>();
+        // Stack<Character> stack = new Stack<Character>();
 
         return 0;
     }
