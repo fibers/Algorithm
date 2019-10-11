@@ -3,6 +3,13 @@ package com.fibers.algorithm.leetcode._1;
 import java.util.HashMap;
 import java.util.Map;
 
+/*
+ * @lc app=leetcode.cn id=1 lang=java
+ *
+ * [1] 两数之和
+ */
+
+// @lc code=start
 public class Solution {
     public int[] twoSum(int[] nums, int target) {
         Map<Integer, Integer> map = new HashMap<>();
@@ -18,3 +25,4 @@ public class Solution {
         return null;
     }
 }
+// @lc code=end
