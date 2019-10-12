@@ -1,13 +1,28 @@
 package com.fibers.algorithm.leetcode._17;
 
+
 import com.fibers.utils.Utils;
 
+// @lc code=start
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/*
+ * @lc app=leetcode.cn id=17 lang=java
+ *
+ * [17] 电话号码的字母组合
+ */
 public class Solution {
+
+    
+    public static void main(String[] args) {
+        Solution s = new Solution();
+        Utils.printList(s.letterCombinations("23"));
+    }
+
+    // @lc code=start
     Map<String, String> phone = new HashMap<String, String>() {{
         put("2", "abc");
         put("3", "def");
@@ -18,12 +33,6 @@ public class Solution {
         put("8", "tuv");
         put("9", "wxyz");
     }};
-
-    public static void main(String[] args) {
-        Solution s = new Solution();
-        Utils.printList(s.letterCombinations("23"));
-    }
-
 
     public List<String> letterCombinations(String digits) {
         List<String> result = new ArrayList<>();
@@ -49,5 +58,7 @@ public class Solution {
             }
         }
     }
+    
 }
+// @lc code=end
 
