@@ -15,7 +15,7 @@ import com.fibers.utils.Utils;
 class Solution {
     public static void main(String[] args) {
         Solution s = new Solution();
-        // Utils.printNestList(s.fourSum(new int[] {1, 0, -1, 0, -2, 2}, 0));
+        Utils.printNestList(s.fourSum(new int[] {1, 0, -1, 0, -2, 2}, 0));
     }
 
     public List<List<Integer>> fourSum(int[] nums, int target) {
