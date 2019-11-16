@@ -6,6 +6,11 @@ import java.util.Map;
 public class Solution {
 
     private static final Map<Character, Integer> map = new HashMap<Character, Integer>() {
+        /**
+        *
+        */
+        private static final long serialVersionUID = 1L;
+
         {
             put('M', 1000);
             put('D', 500);

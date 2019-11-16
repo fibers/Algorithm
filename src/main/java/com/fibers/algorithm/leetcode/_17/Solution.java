@@ -16,23 +16,30 @@ import java.util.Map;
  */
 public class Solution {
 
-    
+
     public static void main(String[] args) {
         Solution s = new Solution();
         Utils.printList(s.letterCombinations("23"));
     }
 
     // @lc code=start
-    Map<String, String> phone = new HashMap<String, String>() {{
-        put("2", "abc");
-        put("3", "def");
-        put("4", "ghi");
-        put("5", "jkl");
-        put("6", "mno");
-        put("7", "pqrs");
-        put("8", "tuv");
-        put("9", "wxyz");
-    }};
+    Map<String, String> phone = new HashMap<String, String>() {
+        /**
+        *
+        */
+        private static final long serialVersionUID = 1L;
+
+        {
+            put("2", "abc");
+            put("3", "def");
+            put("4", "ghi");
+            put("5", "jkl");
+            put("6", "mno");
+            put("7", "pqrs");
+            put("8", "tuv");
+            put("9", "wxyz");
+        }
+    };
 
     public List<String> letterCombinations(String digits) {
         List<String> result = new ArrayList<>();
@@ -58,7 +65,7 @@ public class Solution {
             }
         }
     }
-    
+
 }
 // @lc code=end
 
